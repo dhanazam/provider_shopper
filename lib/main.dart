@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider_shopper/common/theme.dart';
 import 'package:provider_shopper/screens/login.dart';
 import 'package:provider_shopper/screens/catalog.dart';
 import 'package:provider_shopper/screens/cart.dart';
@@ -37,6 +38,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Shopping',
+      theme: appTheme,
       routerConfig: router(),
     );
   }
