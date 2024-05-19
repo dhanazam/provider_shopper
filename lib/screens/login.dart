@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MyLogin extends StatelessWidget {
-  const MyLogin({ super.key});
+  const MyLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class MyLogin extends StatelessWidget {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  hintText: 'Username'
+                  hintText: 'Username',
                 ),
               ),
               TextFormField(
@@ -32,17 +33,17 @@ class MyLogin extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // context.pushReplacement('/catalog');
+                  context.pushReplacement('/catalog');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.yellow,
                 ),
                 child: const Text('ENTER'),
               )
-            ]
-          )
-        )
-      )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

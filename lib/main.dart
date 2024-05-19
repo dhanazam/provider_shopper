@@ -15,19 +15,25 @@ void main() {
 }
 
 GoRouter router() {
-  return GoRouter(initialLocation: '/login', routes: [
-    GoRoute(path: '/login', builder: (context, state) => const MyCatalog()),
-    // GoRoute(
-    //   path: '/catalog',
-    //   builder: (context, state) => const MyCatalog(),
-    //   routes: [
-    //     GoRoute(
-    //       path: 'cart',
-    //       builder: (context, state) => const MyCart(),
-    //     ),
-    //   ],
-    // )
-  ]);
+  return GoRouter(
+    initialLocation: '/login',
+    routes: [
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => const MyLogin(),
+      ),
+      GoRoute(
+        path: '/catalog',
+        builder: (context, state) => const MyCatalog(),
+        routes: [
+          GoRoute(
+            path: 'cart',
+            builder: (context, state) => const MyCart(),
+          ),
+        ],
+      ),
+    ],
+  );
 }
 
 class MyApp extends StatelessWidget {
